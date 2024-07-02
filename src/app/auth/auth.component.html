@@ -1,0 +1,72 @@
+<div class="c-auth">
+  <div class="row between-md between-lg">
+    <div class="col-md-1 col-lg-1">
+      <img src="assets/logos/logo.png" class="logo" alt="Logo" width="50" height="50">
+    </div>
+    <div class="col-md-1 col-lg-1">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="row content between-md between-lg">
+    <div class="col-md-8">
+      <img src="assets/logos/loginBack.png" class="c-img" alt="Login Background">
+    </div>
+    <div class="col-md-4 c-form box text-left">
+      <form [formGroup]="loginForm" (ngSubmit)="getLogin()">
+        <div class="text-left">
+          <h2>Inicia sesión</h2>
+          <h4>Email o nombre de usuario</h4>
+          <mat-form-field appearance="outline" class="c-form-email">
+            <mat-label>Email o nombre de usuario</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+          <h4>Contraseña</h4>
+          <mat-form-field appearance="outline" class="c-form-email">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          </mat-form-field>
+          <mat-slide-toggle>Recuérdame</mat-slide-toggle>
+
+          <button mat-raised-button class="login-button" type="submit">INICIAR SESIÓN</button>
+
+          <div class="forgot-password">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <div class="register">
+            <span>¿No tienes una cuenta?</span>
+            <button mat-button class="register-button">REGISTRARSE</button>
+          </div>
+
+          <div class="social-login">
+            <h3>Inicia sesión con tus redes sociales</h3>
+            <div class="social-buttons">
+              <button mat-button class="social-button google">
+                <img src="assets/logos/google-logo.png" alt="Google">
+              </button>
+              <button mat-button class="social-button facebook">
+                <img src="assets/logos/facebook-logo.png" alt="Facebook">
+              </button>
+              <button mat-button class="social-button apple">
+                <img src="assets/logos/apple-logo-transparent.png" alt="Apple">
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

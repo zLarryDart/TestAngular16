@@ -1,0 +1,94 @@
+<div class="c-card">
+  <div class="row banner-container">
+    <img class="banner" src="assets/images/banner.png" alt="Banner">
+  </div>
+  <div class="row">
+    <h1>Categorías</h1>
+  </div>
+  <div class="row">
+    <div class="column col-md-12">
+      <div class="box">
+        <div class="row between-md">
+          <div class="col-md-2" *ngFor="let categoria of categorias.content | slice:0:5">
+            <app-categoria-card [image]="categoria.imagen!!" [nombre]="categoria.nombre!!"></app-categoria-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Ofertas</h1>
+  </div>
+  <div class="row">
+    <div class="column col-md-12">
+      <div class="box">
+        <div class="row between-md">
+          <div class="col-md-2" *ngFor="let oferta of ofertas.content | slice:0:5">
+            <app-oferta-card [sku]="oferta.sku!!" [image]="oferta.imagen!!" [nombre]="oferta.nombre!!"></app-oferta-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Tiendas Oficiales</h1>
+    </div>
+    <div class="col-md-6 text-right">
+      <button class="ver-todas-button">
+        Ver todas <mat-icon>arrow_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="row around-md">
+    <div class="col-md-2">
+      <div class="box">
+        <img src="assets/images/tienda1.png" alt="">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="box">
+        <img src="assets/images/tienda5.png" alt="">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="box">
+        <img src="assets/images/tienda2.png" alt="">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="box">
+        <img src="assets/images/tienda3.png" alt="">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="box">
+        <img src="assets/images/tienda4.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="row around-md">
+    <div class="col-md-11">
+      <div class="box">
+        <img class="img-tienda-banner" src="assets/images/tiendaBanner.png" alt="Banner Tienda">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Basados en tu última visita</h1>
+  </div>2
+  <div class="row">
+    <div class="column col-md-12">
+      <div class="box">
+        <div class="row between-md">
+          <div class="col-md-2" *ngFor="let product of ultimaVisita.content | slice:0:5">
+            <app-oferta-card [sku]="product.sku!!" [image]="product.imagen!!" [nombre]="product.nombre!!"></app-oferta-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
